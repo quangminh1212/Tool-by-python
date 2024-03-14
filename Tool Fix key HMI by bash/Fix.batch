@@ -1,0 +1,35 @@
+# Yêu cầu : 
+#     . Không cần cài python để sử dụng
+#     . Sử dụng portable từ JLink
+#     . Sửa đổi file hex theo địa chỉ
+
+
+@echo off
+setlocal enabledelayedexpansion
+
+REM Thay đổi giá trị này theo đường dẫn thực tế của file hex
+set "hexFile=your_hex_file.hex"
+
+REM Thay đổi giá trị này theo địa chỉ cần sửa đổi
+set "addressToModify=0001F000"
+
+REM Thay đổi giá trị này thành giá trị mới
+set "newValue=FF"
+
+REM Đọc và sửa đổi file
+for /f "tokens=1,* delims=:" %%a in ('findstr /n "^" "%hexFile%"') do (
+    set "line=%%b"
+    if not "!line!"=="" (
+        REM Kiểm tra địa chỉ trong dòng hiện tại
+        REM Lưu ý: cần thêm logic để xác định đúng địa chỉ trong file hex
+        set "currentAddress=!line:~0,8!"
+        if "!currentAddress!"=="%addressToModify%" (
+            REM Sửa đổi dòng tại địa chỉ
+            REM Lưu ý: cần thêm logic để sửa đổi giá trị một cách chính xác
+            set "line=!line:~0,10!%newValue%!line:~12!"
+        )
+    )
+    echo !line! >> modified_hex_file.hex
+)
+
+echo File hex đã được sửa đổi và lưu thành "modified_hex_file.hex"
