@@ -43,7 +43,7 @@ for raw_message, decoded in decoded_messages:
 # decode_can_messages(can_messages, db): Hàm này nhận vào danh sách các bản tin CAN và database được tải từ tệp tin DBC, sau đó giải mã mỗi bản tin và trả về kết quả đã giải mã.
 # Đối với các bản tin CAN của bạn, hãy chắc chắn rằng chúng được định dạng đúng và thêm vào danh sách can_messages. Đoạn mã sẽ chạy và in ra kết quả đã giải mã cho mỗi bản tin CAN.
 
-    # chạy bằng command prompt, cd C:\VF\0.Gitlab
+    # chạy bằng command prompt, cd C:\VF\Fix\0.Gitlab
     # cd đến file chứa tệp chương trình
     # python -m venv cantools_env
     # cantools_env\Scripts\activate
