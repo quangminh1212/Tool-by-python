@@ -8,8 +8,8 @@ db = cantools.database.load_file(dbc_path)
 
 # Define your CAN messages
 can_messages = [
-    "0x00000102	20 00 00 00 03 00 00 00",
-    "0x00000101	00 10 11 00 00 00 00 00 "
+    "0x00000309	1f 11 00 8d 39 00 00 00 01",
+    "0x00000303	15 30 02 00 11 00 00 00"
 ]
 
 # Function to decode CAN messages
@@ -43,7 +43,7 @@ for raw_message, decoded in decoded_messages:
 # decode_can_messages(can_messages, db): Hàm này nhận vào danh sách các bản tin CAN và database được tải từ tệp tin DBC, sau đó giải mã mỗi bản tin và trả về kết quả đã giải mã.
 # Đối với các bản tin CAN của bạn, hãy chắc chắn rằng chúng được định dạng đúng và thêm vào danh sách can_messages. Đoạn mã sẽ chạy và in ra kết quả đã giải mã cho mỗi bản tin CAN.
 
-    # chạy bằng command prompt, cd C:\VF\Fix\0.Gitlab
+    # chạy bằng command prompt, cd C:\VF
     # cd đến file chứa tệp chương trình
     # python -m venv cantools_env
     # cantools_env\Scripts\activate
